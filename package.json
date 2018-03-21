@@ -1,0 +1,19 @@
+{
+  "name": "node-redis-q",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zsea/redisq"
+  },
+  "author": "zsea",
+  "license": "ISC",
+  "dependencies": {
+    "ioredis": "^3.2.2",
+    "log4js": "^2.5.3"
+  }
+}
