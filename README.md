@@ -11,7 +11,7 @@
 ## 安装
 
 ```shell
-npm install --save redis-zq
+npm install --save node-redis-q
 ```
 
 ## 创建实例
