@@ -18,22 +18,24 @@ npm install --save node-redis-q
 
 ```javascript
 var RedisQ=require("node-redis-q");
-var queue=new RedisQ(conn, name);
+var queue=new RedisQ(conn, name,isDelay);
 ```
 ### 参数描述
 * ```conn```:ioredis的连接字符串或都连接对象，例```redis://127.0.0.1/0```
 * ```name```:第二个参数为队列名称
+* ```isDelay```:是否是延迟队列，延尺队列的消息会开始一个延迟扫描线程。
 
 ## 写入消息
 
 ```javascript
-await queue.push(msg,name);
+await queue.push(msg,[name],[delay]);
 ```
 
 ### 参数描述
 
 * ```msg```:消息内容，可以是Javascript对象
 * ```name```:入队的队列名称，若为空则取实例的队列名称。
+* ```delay```:消息延迟多长时间才执行，单位：秒。
 
 ## 读取消息
 
@@ -56,13 +58,13 @@ await queue.pull();
 ## 确认消息
 
 ```javascript
-await queue.ack(id,success);
+await queue.ack(id,[success]);
 ```
 
 ### 参数描述
 
 * ```id```:消息id
-* ```success```:消息是否消费成功。
+* ```success```:消息是否消费成功，默认：```true```。
 
 ## 事务
 
@@ -112,3 +114,14 @@ queue.setLog(level);
 ### 参数说明 
 
 * ```level```:日志级别，详见log4js
+
+## 延迟一个队列中的消息
+
+```javascript
+queue.delay(id,seconds);
+```
+
+### 参数说明 
+
+* ```id```:需要延迟的消息id。
+* ```seconds```:延迟时长，单位：秒。
