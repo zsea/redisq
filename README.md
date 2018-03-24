@@ -72,7 +72,7 @@ await queue.ack(id,[success]);
 
 ### 开启事务
 
-开启事务后，push和ack方法也需要和手动提交。
+开启事务后，push和ack方法也需要手动提交。
 
 ```javascript
 queue.multi()
