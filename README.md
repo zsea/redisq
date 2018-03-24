@@ -127,3 +127,7 @@ queue.delay(id,seconds);
 * ```seconds```:延迟时长，单位：秒。
 
 **被延迟的消息不需要再调用ack进行消费确认。**
+
+## 属性
+
+* ```redis```:当前队列使用的ioredis实例。
