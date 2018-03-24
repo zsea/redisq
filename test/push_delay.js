@@ -18,7 +18,7 @@ const idCreate = require("../lib/id");
             session: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
             action: "del",
             num: 9000
-        }, 60);
+        },60);
         //for (let j = 0; j < 10; j++) {
         //    //q.send(["hset", "children:" + id, "j" + j, `${i}-${j}`], `${i}-${j}`);
         //}
